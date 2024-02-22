@@ -1,0 +1,16 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bnyitvcfem0b5"]
+
+[ext_resource type="FontFile" uid="uid://d3s3umbck3vgb" path="res://Fonts/Arcade_Cabinet.ttf" id="1_btu27"]
+[ext_resource type="Texture2D" uid="uid://bh17kbwhc4j1p" path="res://UI Themes/TemporaryCustom/UIBorderLarge.png" id="1_w6m0t"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oi4ms"]
+texture = ExtResource("1_w6m0t")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[resource]
+Button/font_sizes/font_size = 42
+Button/fonts/font = ExtResource("1_btu27")
+Button/styles/normal = SubResource("StyleBoxTexture_oi4ms")

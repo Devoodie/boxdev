@@ -1,5 +1,6 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://d3apfemv2ua12"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://d3apfemv2ua12"]
 
+[ext_resource type="FontFile" uid="uid://d3s3umbck3vgb" path="res://Fonts/Arcade_Cabinet.ttf" id="1_4nbqr"]
 [ext_resource type="Texture2D" uid="uid://c0bw3xje3nnyt" path="res://UI Themes/GreyScale/button_disabled.png" id="1_ovu45"]
 [ext_resource type="Texture2D" uid="uid://btpdnotp04otp" path="res://UI Themes/GreyScale/button_pressed.png" id="2_hwtp6"]
 [ext_resource type="Texture2D" uid="uid://bgni267e4i6ny" path="res://UI Themes/GreyScale/button_normal.png" id="3_7or46"]
@@ -26,6 +27,8 @@ texture_margin_right = 10.0
 texture_margin_bottom = 10.0
 
 [resource]
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_4nbqr")
 Button/styles/disabled = SubResource("StyleBoxTexture_r86wi")
 Button/styles/hover = SubResource("StyleBoxTexture_hat0s")
 Button/styles/normal = SubResource("StyleBoxTexture_5ote8")
