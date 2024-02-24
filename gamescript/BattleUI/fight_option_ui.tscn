@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3n5a06yfhmcw"]
+[gd_scene load_steps=4 format=3 uid="uid://b3n5a06yfhmcw"]
 
 [ext_resource type="Script" path="res://BattleUI/fight_option_ui.gd" id="1_b7aqx"]
 [ext_resource type="Theme" uid="uid://bnyitvcfem0b5" path="res://UI Themes/TemporaryCustom/Custom_Temporary_Theme.tres" id="1_selvi"]
+[ext_resource type="Texture2D" uid="uid://dpk1v3ai8432i" path="res://UI Themes/TemporaryCustom/Selector.png" id="3_hl6gg"]
 
 [node name="FightOptionUI" type="Control"]
 layout_mode = 3
@@ -14,36 +15,55 @@ script = ExtResource("1_b7aqx")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -614.0
-offset_top = -610.0
+offset_left = -661.0
+offset_top = -582.0
 grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("1_selvi")
 
-[node name="Attack" type="Button" parent="CanvasLayer/GridContainer"]
+[node name="AttackBox" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Selector" type="TextureRect" parent="CanvasLayer/VBoxContainer/AttackBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+texture = ExtResource("3_hl6gg")
+stretch_mode = 5
+
+[node name="Attack" type="Button" parent="CanvasLayer/VBoxContainer/AttackBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Attack"
 
-[node name="Spells" type="Button" parent="CanvasLayer/GridContainer"]
+[node name="SpellsBox" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spells" type="Button" parent="CanvasLayer/VBoxContainer/SpellsBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Spells"
 
-[node name="Run" type="Button" parent="CanvasLayer/GridContainer"]
+[node name="RunBox" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Run" type="Button" parent="CanvasLayer/VBoxContainer/RunBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Run"
 
-[connection signal="pressed" from="CanvasLayer/GridContainer/Attack" to="." method="_on_attack_pressed"]
-[connection signal="pressed" from="CanvasLayer/GridContainer/Spells" to="." method="_on_spells_pressed"]
-[connection signal="pressed" from="CanvasLayer/GridContainer/Run" to="." method="_on_run_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/AttackBox/Attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/SpellsBox/Spells" to="." method="_on_spells_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/RunBox/Run" to="." method="_on_run_pressed"]
